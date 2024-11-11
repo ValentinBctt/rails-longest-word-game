@@ -1,0 +1,10 @@
+<h1>New Game</h1>
+<h2><%= "#{@letters.join(' ')}" %></h2>
+
+<form action="/score" method="post" data-turbo="false" id="form">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letters %>
+
+  <input type="text" name="answer" />
+  <input type="submit" value="Submit" />
+</form>
